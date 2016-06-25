@@ -3,7 +3,7 @@ resources
 archive
 
 # Compiled CSS
-*.css
+sienna-boilerplate.css.css
 
 # Logs
 logs
