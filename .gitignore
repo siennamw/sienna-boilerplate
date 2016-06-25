@@ -1,3 +1,9 @@
+# Resources file
+resources
+
+# Compiled CSS
+*.css
+
 # Logs
 logs
 *.log

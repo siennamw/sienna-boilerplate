@@ -1,2 +1,2 @@
 # sienna-boilerplate
-Boilerplate styles (LESS) and JavaScript (jQuery) definitions for websites
+Sienna's boilerplate styles (LESS) and JavaScript (jQuery) definitions for websites
