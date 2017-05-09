@@ -1171,7 +1171,7 @@ form {
 
 /* Floats */
 
-.fltrt, .fltlft, .u-pull-right, .u-pull-left {
+.fltrt, .fltlft, .u-pull-right, .u-pull-left, .alignleft, .alignright, .aligncenter, .alignnone {
     display: block;
     float: none;
     margin-right: auto;
@@ -1180,13 +1180,13 @@ form {
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: @bp-larger-than-phablet), print {
-    .fltrt, .u-pull-right {
+    .fltrt, .u-pull-right, .alignright {
         float: right;
         margin-left: 10px;
         margin-right: 0;
     }
 
-    .fltlft, .u-pull-left {
+    .fltlft, .u-pull-left, .alignleft {
         float: left;
         margin-right: 10px;
         margin-left: 0;
