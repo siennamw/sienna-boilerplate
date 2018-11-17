@@ -968,6 +968,17 @@ input {
     }
 }
 
+button, input[type="button"], input[type="submit"], .button, .button-primary {
+    &[disabled] {
+        &, &:hover, &:active {
+            cursor: default;
+            color: @border-color;
+            background-color: @white;
+            border-color: @border-color;
+        }
+    }
+}
+
 // Forms
 //-------------------------------------
 
