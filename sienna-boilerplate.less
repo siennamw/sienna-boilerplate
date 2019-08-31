@@ -521,7 +521,7 @@ nav ul {
     color: inherit;
 
     &.active {
-      color: @primary; // current page for base menu
+      color: @link-color; // current page for base menu
     }
   }
 
@@ -573,11 +573,11 @@ nav ul {
       color: @dark-gray; // base menu color
 
       &:hover, &:focus-within, &.focus, &.active {
-        color: @primary; // base menu active
+        color: @link-color; // base menu active
 
         > a {
           &:hover, &:focus, &.focus, &.active {
-            color: @primary; // base menu hover
+            color: @link-color; // base menu hover
             background-color: transparent;
           }
         }
@@ -588,7 +588,7 @@ nav ul {
       color: @dark-gray; // submenu color
 
       &:hover, &:focus-within, &.focus, &.active {
-        color: @primary; // submenu active
+        color: @link-color; // submenu active
 
         > a {
           &:hover, &:focus, &.focus, &.active {
