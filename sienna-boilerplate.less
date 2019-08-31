@@ -543,7 +543,7 @@ nav ul {
             }
         }
 
-        &:hover, &:focus, &.focus, &.active {
+        &:hover, &:focus-within, &.focus, &.active {
             /* will be colored also when its submenu is :hover, :focus, or .active */
             color: @link-color;
 
@@ -569,7 +569,7 @@ nav ul {
         > li {
             color: @dark-gray; // base menu color
 
-            &:hover, &:focus, &.focus, &.active {
+            &:hover, &:focus-within, &.focus, &.active {
                 color: @primary; // base menu active
 
                 > a {
@@ -583,7 +583,7 @@ nav ul {
         > li > ul li {
             color: @dark-gray; // submenu color
 
-            &:hover, &:focus, &.focus, &.active {
+            &:hover, &:focus-within, &.focus, &.active {
                 color: @primary; // submenu active
 
                 > a {
@@ -600,7 +600,7 @@ nav ul {
             display: inline-block;
             margin-bottom: 0;
 
-            &:hover, &:focus, &.focus, &.active {
+            &:hover, &:focus-within, &.focus, &.active {
                 /* display first submenu */
                 > ul {
                     position: absolute;
@@ -609,7 +609,7 @@ nav ul {
             }
 
             > ul > li {
-                &:hover, &:focus, &.focus, &.active {
+                &:hover, &:focus-within, &.focus, &.active {
                     /* display second submenu */
                     > ul {
                         position: absolute;
@@ -624,7 +624,7 @@ nav ul {
                 }
 
                 > ul > li {
-                    &:hover, &:focus, &.focus, &.active {
+                    &:hover, &:focus-within, &.focus, &.active {
                         /* display third submenu (left) */
                         > ul {
                             left: inherit;
