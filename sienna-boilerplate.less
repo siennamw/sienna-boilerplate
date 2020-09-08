@@ -471,12 +471,11 @@ small {
 
 a {
   color: @link-color;
+  text-decoration: none;
 
   &:hover {
     color: darken(@link-color, 10%);
   }
-
-  text-decoration: none;
 }
 
 // Navigation
@@ -504,20 +503,24 @@ nav ul {
   color: @dark-gray;
   z-index: 99;
 
-  a, ul {
+  a, button, ul {
     box-sizing: border-box;
     display: block;
     position: static;
   }
 
-  a {
-    text-transform: uppercase;
-    font-weight: bold;
+  a, button {
+    border-radius: 0;
+    border: none;
     font-size: inherit;
+    font-weight: bold;
+    height: auto;
+    letter-spacing: .1rem;
     margin: 0;
     padding: 1.5rem 3.5rem 1.5rem 3.5rem;
     text-decoration: none;
-    letter-spacing: .1rem;
+    text-transform: uppercase;
+    width: 100%;
     color: inherit;
 
     &.active {
@@ -539,7 +542,7 @@ nav ul {
         padding: 0;
         margin: 0;
 
-        > a {
+        > a, > button {
           margin: 0;
         }
       }
@@ -549,7 +552,7 @@ nav ul {
       /* will be colored also when its submenu is :hover, :focus, or .active */
       color: @link-color;
 
-      > a {
+      > a, > button {
         &:hover, &:focus, &.focus, &.active {
           color: @white;
           background-color: @primary;
@@ -561,7 +564,6 @@ nav ul {
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: @bp-larger-than-phablet), print {
-
   nav ul {
     display: block;
     text-align: center;
@@ -575,7 +577,7 @@ nav ul {
       &:hover, &:focus-within, &.focus, &.active {
         color: @link-color; // base menu active
 
-        > a {
+        > a, > button {
           &:hover, &:focus, &.focus, &.active {
             color: @link-color; // base menu hover
             background-color: transparent;
@@ -590,7 +592,7 @@ nav ul {
       &:hover, &:focus-within, &.focus, &.active {
         color: @link-color; // submenu active
 
-        > a {
+        > a, > button {
           &:hover, &:focus, &.focus, &.active {
             color: @white; // submenu hover
             background-color: @primary;
@@ -662,7 +664,7 @@ nav ul {
           margin: 0;
           display: block;
 
-          > a {
+          > a, > button {
             position: relative;
             display: block;
             margin: 0;
@@ -671,20 +673,20 @@ nav ul {
           }
 
           &:last-child {
-            > a {
+            > a, > button {
               border-radius: 0 0 4px 4px;
               border-bottom-width: 0;
             }
           }
 
           &:first-child {
-            > a {
+            > a, > button {
               border-radius: 4px 4px 0 0;
             }
 
             /* first submenu triangle pointer */
 
-            > a:before, > a:after {
+            > a:before, > a:after, > button:before, > button:after {
               bottom: 100%;
               left: 50%;
               border: solid transparent;
@@ -695,22 +697,21 @@ nav ul {
               pointer-events: none;
             }
 
-            > a:before {
+            > a:before, > button:before {
               border-color: rgba(238, 238, 238, 0);
               border-bottom-color: @light-gray;
               border-width: 11px;
               margin-left: -11px;
-
             }
 
-            > a:after {
+            > a:after, > button:after {
               border-color: rgba(255, 255, 255, 0);
               border-bottom-color: @white;
               border-width: 10px;
               margin-left: -10px;
             }
 
-            > a:hover:after {
+            > a:hover:after, > button:hover:after {
               border-color: rgba(255, 255, 255, 0);
               border-bottom-color: @primary;
             }
@@ -736,7 +737,7 @@ nav ul {
               margin: 0;
               display: block;
 
-              > a {
+              > a, > button {
                 position: relative;
                 color: inherit;
                 display: block;
@@ -746,20 +747,20 @@ nav ul {
               }
 
               &:last-child {
-                > a {
+                > a, > button {
                   border-radius: 0 0 4px 4px;
                   border-bottom-width: 0;
                 }
               }
 
               &:first-child {
-                > a {
+                > a, > button {
                   border-radius: 4px 4px 0 0;
                 }
 
                 /* second submenu triangle pointer */
 
-                > a:before, > a:after {
+                > a:before, > a:after, > button:before, > button:after {
                   bottom: 50%;
                   border: solid transparent;
                   content: " ";
@@ -769,7 +770,7 @@ nav ul {
                   pointer-events: none;
                 }
 
-                > a:before {
+                > a:before, > button:before {
                   left: -11px;
                   border-color: rgba(238, 238, 238, 0);
                   border-right-color: @light-gray;
@@ -777,7 +778,7 @@ nav ul {
                   margin-bottom: -11px;
                 }
 
-                > a:after {
+                > a:after, > button:after {
                   left: -10px;
                   border-color: rgba(255, 255, 255, 0);
                   border-right-color: @white;
@@ -785,7 +786,7 @@ nav ul {
                   margin-bottom: -10px;
                 }
 
-                > a:hover:after {
+                > a:hover:after, > button:hover:after {
                   border-color: rgba(255, 255, 255, 0);
                   border-right-color: @primary;
                 }
@@ -804,21 +805,21 @@ nav ul {
             > li:first-child {
               /* third submenu (and .leftsubmenu) triangle pointer */
 
-              > a:before {
+              > a:before, > button:before {
                 left: auto;
                 right: -22px;
                 border-color: rgba(238, 238, 238, 0);
                 border-left-color: @light-gray;
               }
 
-              > a:after {
+              > a:after, > button:after {
                 left: auto;
                 right: -20px;
                 border-color: rgba(255, 255, 255, 0);
                 border-left-color: @white;
               }
 
-              > a:hover:after {
+              > a:hover:after, > button:hover:after {
                 border-color: rgba(255, 255, 255, 0);
                 border-left-color: @primary;
               }
@@ -826,7 +827,6 @@ nav ul {
           }
         }
       }
-
     }
   }
 }
