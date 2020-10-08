@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "https://github.com/siennamw/sienna-boilerplate.git",
   "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "normalize.css": "^4.1.1"
   }
 }
